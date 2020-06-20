@@ -13,7 +13,8 @@ var usuarioSchema = new Schema({
     email: { type: String, unique: true, required: [true, 'Este campo es obligatorio.'] },
     password: { type: String, required: [true, 'Este campo es obligatorio.'] },
     img: { type: String, required: false },
-    role: { type: String, required: true, default: 'ROLE_USER', enum: rolesValidos }
+    role: { type: String, required: true, default: 'ROLE_USER', enum: rolesValidos },
+    google: { type: Boolean, default: false }
 });
 
 usuarioSchema.plugin(uniqueValidator, { message: 'El {PATH} ya está en uso.' });
